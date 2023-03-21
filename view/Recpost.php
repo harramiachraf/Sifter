@@ -11,6 +11,13 @@ include_once dirname(__DIR__) . "/controller/ControllerCandidat.php";
 
 ?>
 
+<?php
+include_once dirname(__DIR__) . "/controller/ControllerRecruter.php";
+    $Cont = new ControlleR();
+    $Cont->setParam();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
