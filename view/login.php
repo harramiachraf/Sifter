@@ -55,7 +55,7 @@ include_once dirname(__DIR__) . "/controller/login.php";
             <main >
                 <div class="flex-column">
                     <div class="welcome-head flex-column">
-                        <img src="" alt="this welcome image" width="150" height="200">
+                        <img src="../img/logo2.png" alt="this welcome image" width="150" height="200">
                         <h1 class="welcome-h1">Bienvenue</h1>
                     </div>
                     <div class="welcome-body">
@@ -71,13 +71,12 @@ include_once dirname(__DIR__) . "/controller/login.php";
                         <div class="inputContainer">
                             <label class="label" for="">Entrez votre mot de pass <span style='color:red'>*</span></label>
                             <input class="input-2 input" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" name="pasword" id="password" required>
+                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" name="pasword" id="password" required>
                         </div>
                 </div>
             </main>
             <div class="welcome-footer flex-column">
                     <input type="submit" class="button-next" name="cl"value="Continuer"> 
-                    <!--<i class="fa-duotone fa-arrow-right"></i>-->
                     <p class="welcome-p">Si voulez vous revenir page <a href="/public/auth" class="acceuille"> Acceuille ?</a></p>
                 </div>
         </form>  

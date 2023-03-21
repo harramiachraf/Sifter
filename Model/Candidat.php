@@ -24,17 +24,64 @@ class Candidat extends Connection {
         $_SESSION["nom"]=$user["nom"];
         $_SESSION["prenom"]=$user["prenom"];
         $_SESSION["Tele"]=$user["Tele"];
+        $_SESSION["domaine"]=$user["domaine"];
+        $_SESSION["score"]=$user["score"];
         
-        
+
         $stmt->closeCursor();
         return true;
     }
 
 
-    public function calcul($gmail,$domaine){
+      
+    public function getsCandidats(){
+       try {
+            // connect to the database using the parent class method
+            $pdo = $this->connect();
+            
+            // prepare the SQL query
+            $query = "SELECT * FROM candidat ORDER BY score DESC";
+                      
+            // execute the query and fetch the results
+            $stmt = $pdo->query($query);
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $results;
+        } catch (PDOException $e) {
+            die("Error: " . $e->getMessage());
+        }
         
+    }    
+public function setScore($id,$score){
+    $query="UPDATE  candidat SET Score=:score WHERE idc=:id";
+    $stmt=$this->connect()->prepare($query);
+    $stmt->bindParam(":score", $score);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+}
 
+public function getCandid() {
+    try {
+        // connect to the database using the parent class method
+        $pdo = $this->connect();
+        $id = $_GET['id'];
+        // prepare the SQL query with a placeholder for the ID value
+        $query = "SELECT nom, prenom, gmail, Tele, ville, paye, domaine, Score FROM candidat WHERE idc = ?";
+        // prepare the statement and bind the ID value as a parameter
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(1, $id);
+
+        // execute the query and fetch the first row of results
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $row;
+    } catch (PDOException $e) {
+        // handle the exception by throwing a new custom exception
+        throw new Exception("Error retrieving candidat: " . $e->getMessage());
     }
+}
+    
     public function setUser($name,$prenom,$gmail,$modePass) {
         $query = "INSERT INTO Candidat (nom, prenom, gmail, modPass) VALUES (:nom, :prenom, :gmail, :modePass)";
         $stmt = $this->connect()->prepare($query);

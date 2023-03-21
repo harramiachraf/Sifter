@@ -288,12 +288,14 @@ p{
     padding: 30px;
     box-shadow: 0 10px 25px rgb(92 99 105 / 20%);
     flex-direction: column;
+    background: #f0edfa;
 }
 .welcome-body {
     line-height: 1.5;
 }
 .class-passage-container {
     padding: 50px;
+    z-index: 1;
 }
 .welcome-footer {
     width: 100%;

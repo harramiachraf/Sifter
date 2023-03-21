@@ -23,4 +23,16 @@ class langue extends Connection {
         $lang= $stmt->fetch(PDO::FETCH_ASSOC);
         return  $lang;
     }
+
+
+    function getLangs(){
+        $query="SELECT DISTINCT  (nom) FROM  langues";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->execute();
+        $num = $stmt->rowCount();
+
+        $lang= $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return  $lang;
+    }
+    
 }

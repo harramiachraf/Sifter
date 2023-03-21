@@ -1,9 +1,23 @@
+<?php
+include_once dirname(__DIR__) . "/controller/ControllerCandidat.php";
+    $Cont = new ControllerCandidat();
+    $Cont->setChoix();
+
+    
+    $candidats = $Cont->getsCandidats();;
+
+// loop through the results and do something with each row
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://form.taxi/design/css/ft-form-styles-v3.css">
     <title>Document</title>
     <!-- BoxIcons v2.1.2 -->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
@@ -11,23 +25,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- CSS File -->
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    list-style: none;
-    box-sizing: border-box;
-}
-body {
-    height: 100vh;
-    
-    background-size: cover;
-    font-family: 'Roboto', sans-serif;
-}
-.sidebar {
+        body{
+            display: flex;
+            flex-direction: row;
+
+            font-family: sans-serif;
+
+            height: 100vh;
+        }
+        body form {
+            background: #f0edfa url('https://form.taxi/design/img/SampleForm-Divider2.svg') bottom no-repeat;
+            background-size: 100% auto;
+            padding: 20px 50px;
+            border-radius:10px;
+        }
+        #ft-form .btns{
+            text-align:center;
+        }
+    .sidebar {
     width: 120px;
-    height:100%;
     backdrop-filter: blur(6px);
     background: rgba(10, 10, 10, .65);
     box-shadow: 0 8px 32px rgb(2, 4, 24);
@@ -156,13 +172,13 @@ a {
     </style>
 </head>
 <body>
-    <div class="sidebar">
+   <div class="sidebar">
         <div class="toggle">
             <i class="bx bx-chevron-right"></i>
         </div>
         <div class="logo">
             <img src="https://cdn-icons-png.flaticon.com/512/1251/1251840.png" alt="...">
-            <h3>USER</h3>
+            <h3> <?php echo $_SESSION["nom"]." ". $_SESSION["prenom"]  ?>  </h3>
         </div>
         <nav>
             <div class="nav-title">
@@ -170,7 +186,7 @@ a {
             </div>
             <ul>
                 <li class="nav-item active">
-                    <a href="#/dashboard">
+                    <a href="./dashboard.php">
                         <i class="bx bxs-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
@@ -196,11 +212,61 @@ a {
             </ul>
         </nav>
     </div>
-    <!-- JS File -->
-    <script>
+  <div class="container">
+
+  
+    <form action="" id="ft-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+      
+      <fieldset>
+        <legend>Information post de Travaille:</legend>
+        <div class="two-cols">
+          <label>
+            Nom de votre Entreprise *
+            <input type="text" name="nom-entreprise" required>
+          </label>
+          <label>
+            Nombre d'employes de votre Entreprise *
+            <input type="text" name="nombre-employes" required>
+          </label>
+        </div>
+        <div class="two-cols">
+          <label>
+            Titre de poste *
+            <input type="text" name="poste-titre">
+          </label>
+          <label>
+            Telephone de Entreprise:
+            <input type="tel" name="telephone-entreprise">
+          </label>
+        </div>
+        
+        <div class="two-cols">
+          <label>
+            Nombre de personnes volez vous
+            <input type="text" name="nombre-personne">
+          </label>
+          <label>
+            Ville
+            <input type="text" name="City">
+          </label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description de poste</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+        </div>
+      </fieldset>
+      <div class="btns">
+        <input type="text" name="_gotcha" value="" style="display:none;">
+        <input type="submit" value="Submit application">
+      </div>
+    </form>
+  </div> 
+  
+  
+  <script>
         const sidebar = document.querySelector('.sidebar');
-const navItems = document.querySelectorAll('nav .nav-item');
-const toggle = document.querySelector('.sidebar .toggle');
+        const navItems = document.querySelectorAll('nav .nav-item');
+        const toggle = document.querySelector('.sidebar .toggle');
 toggle.addEventListener('click', () => {
     if (sidebar.className === 'sidebar')
         sidebar.classList.add('open');
@@ -217,6 +283,4 @@ navItems.forEach(navItem => {
 });
     </script>
 </body>
-</html>
-</body> 
 </html>

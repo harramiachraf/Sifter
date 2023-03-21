@@ -56,9 +56,8 @@ include_once dirname(__DIR__) . "/controller/login.php";
             <section id="first-section" class="welocme-page class-passage-container">
                 <div class="main-header">
                     <h2 class="welcome-h2">Prêt à passer à l'étape suivante ?</h2>
-                    <h4 class="welcome-p">Créez un compte ou connectez-vous.</h4>
-                    <p class="welcome-p">mbbrcurbvubv achta jjbvjrjbjkvbbv jbvjbvrjmbqrjbjbjrqvjbq rbvbrjbmbrjbqr jbqjrebjbjbrejjer
-                        jbqrjbjrjebv </p>
+                    <h4 class="welcome-p">Entrée votre code de validation </h4>
+                    
                 </div>
             <form action="" method="post">
                 <div class="main-body">

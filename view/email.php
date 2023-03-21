@@ -18,6 +18,35 @@ include_once dirname(__DIR__) . "/controller/login.php";
 </head>
 
 <body>
+    <div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
     <header>
         <nav>
 
@@ -29,8 +58,7 @@ include_once dirname(__DIR__) . "/controller/login.php";
                 <div class="main-header">
                     <h2 class="welcome-h2">Prêt à passer à l'étape suivante ?</h2>
                     <h4 class="welcome-p">Créez un compte ou connectez-vous.</h4>
-                    <p class="welcome-p">mbbrcurbvubv achta jjbvjrjbjkvbbv jbvjbvrjmbqrjbjbjrqvjbq rbvbrjbmbrjbqr jbqjrebjbjbrejjer
-                        jbqrjbjrjebv </p>
+                    <p class="welcome-p"></p>
                 </div>
 
                 <form action="" method="post">

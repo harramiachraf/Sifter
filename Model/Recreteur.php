@@ -30,7 +30,6 @@ class Recruteur extends Connection {
         $stmt->bindParam(":gmail", $gmail);
         $stmt->bindParam(":modePass", $modePass);
 
-
         try{
             $stmt->execute();
             $t=$this->getUser($gmail,$modePass);
@@ -42,6 +41,12 @@ class Recruteur extends Connection {
         
         $stmt->closeCursor();
     }
+
+    public function createPost(){
+             $query = "INSERT INTO offre (poste, entreprise, description, domaine,localisation,salaire,experience,education,competences,date_debut,date_fin,recruteur_id) VALUES (:poste, :entreprise, :description, :domaine,:localisation,:salaire,:experience,:education,:competences,:date_debut,:date_fin,:recruteur_id)";
+
+    }
+
     
     
 }

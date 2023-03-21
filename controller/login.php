@@ -15,14 +15,14 @@ class auth{
                 $Rec =new Recruteur();
                 if($Cont->getUser($_POST['email'] , $_POST['pasword'] )){
                     if(!empty($_SESSION["Tele"])){
-                        header('location: ../view/sidbar.php');
+                        header('location: ../view/dashboard.php');
                         exit();
                     }
                     header('location: ../view/Candidat.php');
                     exit();
                 }
                 else if($Rec->getUser($_POST['email'],$_POST['pasword'] )){
-                    header('location: ../view/param.php');
+                    header('location: ../view/parm.php');
                     exit();
                 }
             }

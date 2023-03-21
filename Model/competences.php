@@ -36,6 +36,17 @@ class Competences extends Connection {
 
         $stmt->execute();
     }
+
+    public function getDomaine(){
+        $query = "SELECT DISTINCT (domaine) FROM competences ";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->execute();
+        $num = $stmt->rowCount();
+
+        $comp= $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $comp;
+    }
 }
 
 ?>

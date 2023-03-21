@@ -16,6 +16,8 @@ $com->Update();
 $lang->Update();
 $exp->Update();
 $edu->Update();
+$Cont->score();
+
 ?>
 
 
@@ -255,7 +257,7 @@ $edu->Update();
 <section class="competence">
 <div class="education-header">
 <div class="left-header">
-  <i class="fa-duotone fa-briefcase"></i>
+  <i class="fa-duotone fa-address-card"></i>
   <h2>Competences:</h2>
 </div>
 <div class="buttons">
@@ -281,10 +283,10 @@ $edu->Update();
 </div>
 </div>
 </section>
-<section class="langage">
+<section class="langage" style="display: flex;flex-direction: column;">
 <div class="education-header">
 <div class="left-header">
-  <i class="fa-duotone fa-briefcase"></i>
+<i class="fa-duotone fa-language"></i>
   <h2>Language:</h2>
 </div>
 <div class="buttons">
@@ -310,10 +312,10 @@ $edu->Update();
 </div>
 </div>
 </section>
-<section class="loisir">
+<section class="loisir" style= "display: none; flex-direction: column;">
 <div class="education-header">
 <div class="left-header">
-  <i class="fa-duotone fa-briefcase"></i>
+<i class="fa-duotone fa-star"></i>
   <h2>Loisir:</h2>
 </div>
 <div class="buttons">

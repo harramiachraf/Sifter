@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./stylesheets/indexstyle.css">
 
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
-  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <link rel="icon" type="image/x-icon" href="img/logo2.png">
   <title>Document</title>
 </head>
 
@@ -19,8 +19,8 @@
     <nav class="navbar">
       <!-- LOGO -->
       <div class="logo">
-        <img class="img-logo" src="/img/logo.png" alt="logo">
-        <a class="a-logo " href="#">Rec<span class="span-log">Me</span></a>
+        <img class="img-logo" src="img/logo2.png" alt="logo">
+        <a class="a-logo " href="#">Sif<span class="span-log">ter</span></a>
       </div>
       <div class="left-nav">
         <div class="log">
@@ -55,14 +55,14 @@
       <div class="hero-left flex-column">
         <div class="hero-subtit flex-row">
           <div class="hero-subtitle-box"></div>
-          <p class="hero-sub-p">Welcome to Recrute Me</p>
+          <p class="hero-sub-p">Bienvenue à Sifter</p>
         </div>
         <div class="hero-title-wrap">
           <h1 class="hero-title-h1">
-            The Best Value for <span class="highlight"> Business </span>with perfect Grouwth
+            La meilleure valeur pour <span class="highlight"> les entreprises </span>avec une croissance parfaite.
           </h1>
-          <p class="hero-sub-p2">We understand our customer’s needs and hence our work approach & systems will tend to
-            know the project result.</p>
+          <p class="hero-sub-p2">Nous comprenons les besoins de nos clients et, par conséquent, notre approche et nos systèmes de travail auront tendance à
+             connaître le résultat du projet.</p>
         </div>
       </div>
       <div class="hero-right">
